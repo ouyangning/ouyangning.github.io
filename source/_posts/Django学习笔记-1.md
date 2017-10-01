@@ -36,6 +36,17 @@ Django开发服务是可用在开发期间的，一个内建的，轻量的web�
 启动服务，运行下面的命令：
 `Python manage.py runserver`
 
+报错：
+
+```
+You have 13 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.
+Run 'python manage.py migrate' to apply them.
+```
+
+依照指示运行`python manage.py migrate` 即可
+
+
+
 默认情况下，`runserver`命令在8000端口启动开发服务器，且仅监听本地连接。要想要更改服务器端口的话，可将端口作为命令行参数传入：
 `Python manage.py runserver 8080`
 通过指定一个IP地址，可以告诉服务器允许非本地连接访问。如果和其他开发人员共享同一开发站点的话，该功能特别有用：
