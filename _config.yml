@@ -3,9 +3,9 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 狮子山
+title: 爱护颈椎，从我做起。
 subtitle:
-description: 爱护颈椎，从我做起。
+description: 
 author: 狮子山的牧羊人
 language: zh-Hans
 timezone: Asia/Shanghai
@@ -87,3 +87,10 @@ algolia:
   adminApiKey: 02e7fff9bb54a87c9e849749be368cce
   indexName: getstarted_actors
   chunkSize: 5000
+
+feed:
+  type: rss2
+  path: rss2.xml
+  limit: 5
+  hub:
+  content: 'true'
