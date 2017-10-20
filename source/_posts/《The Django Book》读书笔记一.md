@@ -1,5 +1,5 @@
 ---
-title: Django学习笔记_1
+title: 《The Django Book》读书笔记一
 date: 2017-10-01 15:25:01
 tags: 
 - Django
@@ -7,7 +7,7 @@ categories:
 - 读书笔记
 ---
 
-# Django学习笔记_1
+# 《The Django Book》读书笔记一
 
 ## 开始一个项目
 

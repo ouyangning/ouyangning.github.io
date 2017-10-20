@@ -1,11 +1,11 @@
 ---
-title: Django学习笔记_2
+title: 《The Django Book》读书笔记二
 date: 2017-10-01 16:32:55
 tags: Django
 categories: 读书笔记
 ---
 
-# Django学习笔记_2
+# 《The Django Book》读书笔记二
 
 ## MTV开发模式
 
