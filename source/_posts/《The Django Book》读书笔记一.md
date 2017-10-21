@@ -5,6 +5,9 @@ tags:
 - Django
 categories: 
 - 读书笔记
+- 计算机科学
+- 软件框架
+- The Django Book
 ---
 
 # 《The Django Book》读书笔记一

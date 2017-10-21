@@ -82,10 +82,10 @@ deploy:
   branch: master
 
 algolia:
-  applicationID: USX1CSN6CY
-  apiKey: 2ce03b6b78db5550bee71f05d2665d40
-  adminApiKey: 02e7fff9bb54a87c9e849749be368cce
-  indexName: getstarted_actors
+  applicationID: L4LZFGJ159
+  apiKey: 59b01fe1fd60beead3a229cc49619841
+  adminApiKey: 78aaa20a05d1724f5778a18f8601e150
+  indexName: L4LZFGJ159
   chunkSize: 5000
 
 feed:
