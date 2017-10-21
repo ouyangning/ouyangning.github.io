@@ -2,12 +2,12 @@
 title: 《The Django Book》读书笔记一
 date: 2017-10-01 15:25:01
 tags: 
-- Django
+  - Django
 categories: 
-- 读书笔记
-- 计算机科学
-- 软件框架
-- The Django Book
+  - 读书笔记
+    - 计算机科学
+      - 软件框架
+        - The Django Book
 ---
 
 # 《The Django Book》读书笔记一
