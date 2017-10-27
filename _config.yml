@@ -87,6 +87,10 @@ algolia:
   adminApiKey: 78aaa20a05d1724f5778a18f8601e150
   indexName: L4LZFGJ159
   chunkSize: 5000
+  fields:
+    - title
+    - slug
+    - content:strip
 
 feed:
   type: rss2
