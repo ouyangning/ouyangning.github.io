@@ -28,5 +28,5 @@ Django第一次响应来自某个客户端的请求时，会在服务器端随�
 
 1. 首先，最基本的原则是：GET请求不要有副作用。也就是说任何处理GET请求的代码对资源的访问都一定要是“只读”的。
 2. 要启用`django.middleware.csrf.CsrfViewMiddleware`这个中间件
-3. 再次，在所有的POST表单元素时，需要加上一个`{% csrf_token %}`tag
+3. 再次，在所有的POST表单元素时，需要加上一个`\{% csrf_token %}`tag
 4. 在渲染模块时，使用`RequestContext`。`RequestContext`会处理`csrf_token`这个tag，从而自动为表单添加一个名为`csrfmiddlewaretoken`的input。
