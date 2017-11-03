@@ -59,32 +59,32 @@ AND _id NOT IN (SELECT * FROM(
 
 按照`lblCollectionUnicode` 的取值分组，其中元组数大于1的组有重复数据。利用`MIN()` 函数取得每组中`_id` 值最小的元组并将其排除在外，删除元组数大于1的组中的其余数据，即只保留一条数据。
 
-> ```sql
-> DELETE FROM bone
-> WHERE lblCollectionUnicode IN (
->         SELECT lblCollectionUnicode FROM bone 
->         GROUP BY 
-> 			lblCollectionUnicode 
->         HAVING 
-> 			count(lblCollectionUnicode) > 1 )
-> AND _id NOT IN (
-> 		SELECT MIN(_id) FROM bone 
->         GROUP BY
-> 			lblCollectionUnicode
-> 		HAVING
-> 			count(lblCollectionUnicode) > 1);
-> ```
->
-> MYSQL执行上述语句报错：
->
-> 报错信息如下：
->
-> 　　`错误代码： 1093`
-> 　　`You can't specify target table 'bone' for update in FROM clause`
->
-> 意思是不能在同一语句中更新select出的同一张表元组的属性值
->
-> 解决方法：将select出的结果通过中间表再select一遍即可。
+```sql
+DELETE FROM bone
+WHERE lblCollectionUnicode IN (
+        SELECT lblCollectionUnicode FROM bone 
+        GROUP BY 
+			lblCollectionUnicode 
+        HAVING 
+			count(lblCollectionUnicode) > 1 )
+AND _id NOT IN (
+		SELECT MIN(_id) FROM bone 
+        GROUP BY
+			lblCollectionUnicode
+ 		HAVING
+ 			count(lblCollectionUnicode) > 1);
+```
+
+ MYSQL执行上述语句报错：
+
+ 报错信息如下：
+
+ 　　`错误代码： 1093`
+ 　　`You can't specify target table 'bone' for update in FROM clause`
+
+意思是不能在同一语句中更新select出的同一张表元组的属性值
+
+解决方法：将select出的结果通过中间表再select一遍即可。
 
 ```sql
 ALTER TABLE bone change _id _id INT(10);
