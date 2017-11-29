@@ -10,7 +10,7 @@ categories:
 
 
 
-从网上下载了一个[公开数据集](https://www.capitalbikeshare.com/system-data)，想要用来做一点小实验。下载下载之后发现这是一个`.csv`格式的文件，里面大概有50多万条数据。那么下一步就是要把这些数据导入到数据库里。
+从网上下载了一个[公开数据集](https://www.capitalbikeshare.com/system-data)，想要用来做一点小实验。下载之后发现这是一个`.csv`格式的文件，里面大概有50多万条数据。那么下一步就是要把这些数据导入到数据库里。
 
 ### 方案一
 
@@ -88,7 +88,7 @@ if __name__ == '__main__':
 
 看看这次需要多长的时间。
 
-<font color=red>`264.5988073348999s`</font>
+<font color=red>264.5988073348999s</font>
 
 ### 方案三
 
@@ -131,4 +131,4 @@ LINES TERMINATED BY '\n'
 IGNORE 1 lines;
 ```
 
-<font color=red>`64.813s`</font>
+<font color=red>64.813s</font>
