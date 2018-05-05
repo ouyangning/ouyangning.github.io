@@ -1,8 +1,8 @@
 ---
 title: 561. Array Partition I
 date: 2018-05-05 15:42:00
-tags:
-categories
+tags: 
+categories: 
 - 刷题
 - LeetCode
 ---
