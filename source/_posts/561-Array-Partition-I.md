@@ -2,15 +2,12 @@
 title: 561. Array Partition I
 date: 2018-05-05 15:42:00
 tags:
-- 排序
 categories
 - 刷题
-- PAT（Basic Level）Practice
+- LeetCode
 ---
 
 >Given an array of **2n** integers, your task is to group these integers into **n** pairs of integer, say (a1, b1), (a2, b2), ..., (an, bn) which makes sum of min(ai, bi) for all i from 1 to n as large as possible. 
-
-
 
 **Example 1:** 
 
