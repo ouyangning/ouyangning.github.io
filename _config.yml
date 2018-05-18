@@ -6,7 +6,7 @@
 title: 关爱颈椎成长协会
 subtitle:
 description: 
-author: 狮子山的牧羊人
+author: Lenin
 language: zh-Hans
 timezone: Asia/Shanghai
 
@@ -80,17 +80,6 @@ deploy:
   type: git
   repo: https://github.com/ouyangning/ouyangning.github.io.git
   branch: master
-
-algolia:
-  applicationID: L4LZFGJ159
-  apiKey: 59b01fe1fd60beead3a229cc49619841
-  adminApiKey: 78aaa20a05d1724f5778a18f8601e150
-  indexName: L4LZFGJ159
-  chunkSize: 5000
-  fields:
-    - title
-    - slug
-    - content:strip
 
 feed:
   type: rss2
