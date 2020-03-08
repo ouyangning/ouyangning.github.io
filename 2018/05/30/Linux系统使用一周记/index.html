@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="zh_Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/ningoy.github.io/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/ningoy.github.io/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/ningoy.github.io/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/ningoy.github.io/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/ningoy.github.io/css/main.css">
+
+
+<link rel="stylesheet" href="/ningoy.github.io/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"ningoy.github.io","root":"/ningoy.github.io/","scheme":"Muse","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="之前接触Linux 系统都是在虚拟机里，第一次用的是Ubuntu ，之后又试了试Debian 。但是貌似只是在里面试了试几个命令就不了了之了。一来在虚拟机里响应速度比较慢，二来想要打开这个系统得先启动Windows，再打开VMware， 太笨重了。再者说，当时也实在没有什么切实的需求，所以用起来也不得劲。不过后来慢慢发现，Linux 系统最大的优势在于他对于开发者的友好（买不起苹果），实际体验过后">
+<meta name="keywords" content="周记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux系统使用一周记">
+<meta property="og:url" content="https://ningoy.github.io/2018/05/30/Linux系统使用一周记/index.html">
+<meta property="og:site_name" content="关爱颈椎成长协会">
+<meta property="og:description" content="之前接触Linux 系统都是在虚拟机里，第一次用的是Ubuntu ，之后又试了试Debian 。但是貌似只是在里面试了试几个命令就不了了之了。一来在虚拟机里响应速度比较慢，二来想要打开这个系统得先启动Windows，再打开VMware， 太笨重了。再者说，当时也实在没有什么切实的需求，所以用起来也不得劲。不过后来慢慢发现，Linux 系统最大的优势在于他对于开发者的友好（买不起苹果），实际体验过后">
+<meta property="og:locale" content="zh_Hans">
+<meta property="og:image" content="http://op7aviu2v.bkt.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%A1%8C%E9%9D%A2_Desktop_20180530092252.png">
+<meta property="og:image" content="http://op7aviu2v.bkt.clouddn.com/%E6%B7%B1%E5%BA%A6%E7%BB%88%E7%AB%AF_deepin-terminal_20180530092023.png">
+<meta property="og:image" content="http://op7aviu2v.bkt.clouddn.com/%E6%B7%B1%E5%BA%A6%E5%90%AF%E5%8A%A8%E5%99%A8_dde-launcher_20180530092326.png">
+<meta property="og:image" content="http://op7aviu2v.bkt.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86_dde-file-manager_20180530092440.png">
+<meta property="og:updated_time" content="2020-01-27T10:45:35.037Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux系统使用一周记">
+<meta name="twitter:description" content="之前接触Linux 系统都是在虚拟机里，第一次用的是Ubuntu ，之后又试了试Debian 。但是貌似只是在里面试了试几个命令就不了了之了。一来在虚拟机里响应速度比较慢，二来想要打开这个系统得先启动Windows，再打开VMware， 太笨重了。再者说，当时也实在没有什么切实的需求，所以用起来也不得劲。不过后来慢慢发现，Linux 系统最大的优势在于他对于开发者的友好（买不起苹果），实际体验过后">
+<meta name="twitter:image" content="http://op7aviu2v.bkt.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%A1%8C%E9%9D%A2_Desktop_20180530092252.png">
+
+<link rel="canonical" href="https://ningoy.github.io/2018/05/30/Linux系统使用一周记/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true
+  };
+</script>
+
+  <title>Linux系统使用一周记 | 关爱颈椎成长协会</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/ningoy.github.io/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">关爱颈椎成长协会</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/ningoy.github.io/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/ningoy.github.io/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh_Hans">
+    <link itemprop="mainEntityOfPage" href="https://ningoy.github.io/2018/05/30/Linux系统使用一周记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/ningoy.github.io/images/avatar.gif">
+      <meta itemprop="name" content="Lenin">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="关爱颈椎成长协会">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Linux系统使用一周记
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-05-30 08:30:50" itemprop="dateCreated datePublished" datetime="2018-05-30T08:30:50+08:00">2018-05-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-01-27 18:45:35" itemprop="dateModified" datetime="2020-01-27T18:45:35+08:00">2020-01-27</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>之前接触<code>Linux</code> 系统都是在虚拟机里，第一次用的是<code>Ubuntu</code> ，之后又试了试<code>Debian</code> 。但是貌似只是在里面试了试几个命令就不了了之了。一来在虚拟机里响应速度比较慢，二来想要打开这个系统得先启动<code>Windows</code>，再打开<code>VMware</code>， 太笨重了。再者说，当时也实在没有什么切实的需求，所以用起来也不得劲。<br>不过后来慢慢发现，<code>Linux</code> 系统最大的优势在于他对于开发者的友好（买不起苹果），实际体验过后也确实是这样。但同时，也对普通用户十分不友好，如果不能看报错信息，自己解决问题，还是远离<code>Linux</code> 系统吧。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="Deepin"><a href="#Deepin" class="headerlink" title="Deepin"></a>Deepin</h3><p>这一次选择的<code>Linux</code>发行版是<code>Deepin</code>，想到毕竟是国人开发，应该会比较在意国人的需求。果然，在深度商店里就可以直接安装<code>Tim</code>，<code>WeChat</code>，<code>搜狗输入法</code>等软件。再一个就是，<code>Deepin</code>打的口号就是“免除新手痛苦，节省老手时间”，提供了<code>out-of-box</code>的使用体验，对我这样的新手可以说是很友好了。</p>
+<p><em>深度桌面</em></p>
+<p><img src="http://op7aviu2v.bkt.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%A1%8C%E9%9D%A2_Desktop_20180530092252.png" alt="深度桌面"></p>
+<p><em>深度终端</em></p>
+<p><img src="http://op7aviu2v.bkt.clouddn.com/%E6%B7%B1%E5%BA%A6%E7%BB%88%E7%AB%AF_deepin-terminal_20180530092023.png" alt="深度终端"></p>
+<p><em>深度启动器</em></p>
+<p><img src="http://op7aviu2v.bkt.clouddn.com/%E6%B7%B1%E5%BA%A6%E5%90%AF%E5%8A%A8%E5%99%A8_dde-launcher_20180530092326.png" alt="深度启动器"></p>
+<p><em>深度文件管理</em></p>
+<p><img src="http://op7aviu2v.bkt.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86_dde-file-manager_20180530092440.png" alt="深度文件管理"></p>
+<h3 id="使用U盘安装"><a href="#使用U盘安装" class="headerlink" title="使用U盘安装"></a>使用U盘安装</h3><p>因为非常舍不得<code>Windows</code>，所以选择<code>Windows</code>和<code>Deepin</code>双系统，打游戏在<code>Windows</code>上，开发在<code>Deepin</code>上。先在<code>Windows</code>上用<code>磁盘管理</code>释放了50G可用空间，打算20G挂载在<code>/</code>目录下，30G挂载在<code>~</code>目录下。之后在<code>Windows</code>上</p>
+<ol>
+<li>下载深度启动盘制作工具和官方最新的镜像文件</li>
+<li>插入U盘到电脑的USB接口中</li>
+<li>打开深度启动盘制作工具</li>
+<li>选择深度操作系统镜像文件以及分区</li>
+<li>点击<code>开始</code>即可制作</li>
+<li>进入电脑<code>BOIS</code>界面将U盘设置为第一启动项，关闭安全启动，重启电脑</li>
+<li>之后就进入<code>Deepin</code>的安装界面了</li>
+</ol>
+<h3 id="工具推荐"><a href="#工具推荐" class="headerlink" title="工具推荐"></a>工具推荐</h3><p>所推荐的这些工具，都是基于个人偏好和工作所需，并不一定适合所有人，各取所需就好。</p>
+<h4 id="miniconda"><a href="#miniconda" class="headerlink" title="miniconda"></a>miniconda</h4><p><code>conda</code>是类似于<code>npm</code>或<code>maven</code>的包管理工具，只是<code>conda</code>是针对<code>python</code>的。可以安装<code>miniconda</code>或<code>anaconda</code>进行安装，<code>anaconda</code>是一个用于科学计算的<code>python</code>发行版，包含了众多流行的科学计算、数据分析的<code>python</code>包。<code>miniconda</code>是一个<code>anaconda</code>的轻量级替代，默认只包含了<code>python</code>和<code>conda</code>，但是可以通过<code>pip</code>和<code>conda</code>来安装所需要的包。</p>
+<h5 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h5><p>可以通过<a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/" target="_blank" rel="noopener">清华大学开源软件镜像站</a>下载，比从官网直接下载会快一些。下载之后双击打开就可以安装了。</p>
+<h5 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h5><p><code>conda list</code>列出当前环境下的所有包<br><code>conda list -n env_name</code>列出一个虚拟环境下的所有包<br><code>conda install package</code>为当前环境安装某个包<br><code>conda install -n env_name package_name</code>为某个虚拟环境安装某个包<br><code>conda env list</code>列出所有<code>conda</code>下的虚拟环境<br><code>conda create --name env_name python=x.x</code>创建指定<code>python</code>版本的虚拟环境<br><code>source activate env_name</code>进入某个虚拟环境<br><code>conda env export &gt; environment.yml</code>生成当前的环境配置<br><code>conda remove --name env_name --all</code>删除某个环境<br><code>source deactivate</code>退出某个环境</p>
+<h4 id="vim-nox"><a href="#vim-nox" class="headerlink" title="vim-nox"></a>vim-nox</h4><p>之所以会提到这个，是因为<code>Deepin</code>原生的<code>vim</code>不支持<code>python2</code>和<code>python3</code>，需要重新编译。但是编译起来太麻烦了，刚好<code>vim-nox</code>支持多种脚本语言，所以就直接用这个好了。</p>
+<h4 id="autojump"><a href="#autojump" class="headerlink" title="autojump"></a>autojump</h4><p><code>autojump</code>插件可以用于直达常用目录。也可以手动设置权重数据库，很方便。</p>
+<h5 id="安装-2"><a href="#安装-2" class="headerlink" title="安装"></a>安装</h5><ol>
+<li><code>git clone git://github.com/joelthelion/autojump.git</code></li>
+<li><code>cd autojump
+./install.py or ./uninstall.py</code><h5 id="使用-1"><a href="#使用-1" class="headerlink" title="使用"></a>使用</h5><code>j dir</code>直达转到对应的目录去<br><code>autojump -a [dir]</code>在数据库中添加一个目录<br><code>autojump -i [value]</code>提升当前目录的权重<br><code>autojump -d [value]</code>降低当前目录的权重<br><code>autojump -s</code>显示数据库中的统计数据<br><code>autojump --purge</code> 清除不再需要的目录</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/ningoy.github.io/tags/周记/" rel="tag"># 周记</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/ningoy.github.io/2018/05/05/561-Array-Partition-I/" rel="prev" title="561. Array Partition I">
+      <i class="fa fa-chevron-left"></i> 561. Array Partition I
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Deepin"><span class="nav-number">1.1.</span> <span class="nav-text">Deepin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用U盘安装"><span class="nav-number">1.2.</span> <span class="nav-text">使用U盘安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#工具推荐"><span class="nav-number">1.3.</span> <span class="nav-text">工具推荐</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#miniconda"><span class="nav-number">1.3.1.</span> <span class="nav-text">miniconda</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#安装-1"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用"><span class="nav-number">1.3.1.2.</span> <span class="nav-text">使用</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vim-nox"><span class="nav-number">1.3.2.</span> <span class="nav-text">vim-nox</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#autojump"><span class="nav-number">1.3.3.</span> <span class="nav-text">autojump</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#安装-2"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用-1"><span class="nav-number">1.3.3.2.</span> <span class="nav-text">使用</span></a></li></ol></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Lenin</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/ningoy.github.io/archives/">
+        
+          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/ningoy.github.io/categories/">
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/ningoy.github.io/tags/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lenin</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.7.2
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/ningoy.github.io/lib/anime.min.js"></script>
+  <script src="/ningoy.github.io/lib/velocity/velocity.min.js"></script>
+  <script src="/ningoy.github.io/lib/velocity/velocity.ui.min.js"></script>
+<script src="/ningoy.github.io/js/utils.js"></script><script src="/ningoy.github.io/js/motion.js"></script>
+<script src="/ningoy.github.io/js/schemes/muse.js"></script>
+<script src="/ningoy.github.io/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
