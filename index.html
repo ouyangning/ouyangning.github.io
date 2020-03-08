@@ -144,101 +144,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh_Hans">
-    <link itemprop="mainEntityOfPage" href="https://ningoy.github.io/2018/05/30/Linux系统使用一周记/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/ningoy.github.io/images/avatar.gif">
-      <meta itemprop="name" content="Lenin">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="关爱颈椎成长协会">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/ningoy.github.io/2018/05/30/Linux系统使用一周记/" class="post-title-link" itemprop="url">Linux系统使用一周记</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2018-05-30 08:30:50" itemprop="dateCreated datePublished" datetime="2018-05-30T08:30:50+08:00">2018-05-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-01-27 18:45:35" itemprop="dateModified" datetime="2020-01-27T18:45:35+08:00">2020-01-27</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>之前接触<code>Linux</code> 系统都是在虚拟机里，第一次用的是<code>Ubuntu</code> ，之后又试了试<code>Debian</code> 。但是貌似只是在里面试了试几个命令就不了了之了。一来在虚拟机里响应速度比较慢，二来想要打开这个系统得先启动<code>Windows</code>，再打开<code>VMware</code>， 太笨重了。再者说，当时也实在没有什么切实的需求，所以用起来也不得劲。<br>不过后来慢慢发现，<code>Linux</code> 系统最大的优势在于他对于开发者的友好（买不起苹果），实际体验过后也确实是这样。但同时，也对普通用户十分不友好，如果不能看报错信息，自己解决问题，还是远离<code>Linux</code> 系统吧。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="Deepin"><a href="#Deepin" class="headerlink" title="Deepin"></a>Deepin</h3><p>这一次选择的<code>Linux</code>发行版是<code>Deepin</code>，想到毕竟是国人开发，应该会比较在意国人的需求。果然，在深度商店里就可以直接安装<code>Tim</code>，<code>WeChat</code>，<code>搜狗输入法</code>等软件。再一个就是，<code>Deepin</code>打的口号就是“免除新手痛苦，节省老手时间”，提供了<code>out-of-box</code>的使用体验，对我这样的新手可以说是很友好了。</p>
-<p><em>深度桌面</em></p>
-<p><img src="http://op7aviu2v.bkt.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%A1%8C%E9%9D%A2_Desktop_20180530092252.png" alt="深度桌面"></p>
-<p><em>深度终端</em></p>
-<p><img src="http://op7aviu2v.bkt.clouddn.com/%E6%B7%B1%E5%BA%A6%E7%BB%88%E7%AB%AF_deepin-terminal_20180530092023.png" alt="深度终端"></p>
-<p><em>深度启动器</em></p>
-<p><img src="http://op7aviu2v.bkt.clouddn.com/%E6%B7%B1%E5%BA%A6%E5%90%AF%E5%8A%A8%E5%99%A8_dde-launcher_20180530092326.png" alt="深度启动器"></p>
-<p><em>深度文件管理</em></p>
-<p><img src="http://op7aviu2v.bkt.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86_dde-file-manager_20180530092440.png" alt="深度文件管理"></p>
-<h3 id="使用U盘安装"><a href="#使用U盘安装" class="headerlink" title="使用U盘安装"></a>使用U盘安装</h3><p>因为非常舍不得<code>Windows</code>，所以选择<code>Windows</code>和<code>Deepin</code>双系统，打游戏在<code>Windows</code>上，开发在<code>Deepin</code>上。先在<code>Windows</code>上用<code>磁盘管理</code>释放了50G可用空间，打算20G挂载在<code>/</code>目录下，30G挂载在<code>~</code>目录下。之后在<code>Windows</code>上</p>
-<ol>
-<li>下载深度启动盘制作工具和官方最新的镜像文件</li>
-<li>插入U盘到电脑的USB接口中</li>
-<li>打开深度启动盘制作工具</li>
-<li>选择深度操作系统镜像文件以及分区</li>
-<li>点击<code>开始</code>即可制作</li>
-<li>进入电脑<code>BOIS</code>界面将U盘设置为第一启动项，关闭安全启动，重启电脑</li>
-<li>之后就进入<code>Deepin</code>的安装界面了</li>
-</ol>
-<h3 id="工具推荐"><a href="#工具推荐" class="headerlink" title="工具推荐"></a>工具推荐</h3><p>所推荐的这些工具，都是基于个人偏好和工作所需，并不一定适合所有人，各取所需就好。</p>
-<h4 id="miniconda"><a href="#miniconda" class="headerlink" title="miniconda"></a>miniconda</h4><p><code>conda</code>是类似于<code>npm</code>或<code>maven</code>的包管理工具，只是<code>conda</code>是针对<code>python</code>的。可以安装<code>miniconda</code>或<code>anaconda</code>进行安装，<code>anaconda</code>是一个用于科学计算的<code>python</code>发行版，包含了众多流行的科学计算、数据分析的<code>python</code>包。<code>miniconda</code>是一个<code>anaconda</code>的轻量级替代，默认只包含了<code>python</code>和<code>conda</code>，但是可以通过<code>pip</code>和<code>conda</code>来安装所需要的包。</p>
-<h5 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h5><p>可以通过<a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/" target="_blank" rel="noopener">清华大学开源软件镜像站</a>下载，比从官网直接下载会快一些。下载之后双击打开就可以安装了。</p>
-<h5 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h5><p><code>conda list</code>列出当前环境下的所有包<br><code>conda list -n env_name</code>列出一个虚拟环境下的所有包<br><code>conda install package</code>为当前环境安装某个包<br><code>conda install -n env_name package_name</code>为某个虚拟环境安装某个包<br><code>conda env list</code>列出所有<code>conda</code>下的虚拟环境<br><code>conda create --name env_name python=x.x</code>创建指定<code>python</code>版本的虚拟环境<br><code>source activate env_name</code>进入某个虚拟环境<br><code>conda env export &gt; environment.yml</code>生成当前的环境配置<br><code>conda remove --name env_name --all</code>删除某个环境<br><code>source deactivate</code>退出某个环境</p>
-<h4 id="vim-nox"><a href="#vim-nox" class="headerlink" title="vim-nox"></a>vim-nox</h4><p>之所以会提到这个，是因为<code>Deepin</code>原生的<code>vim</code>不支持<code>python2</code>和<code>python3</code>，需要重新编译。但是编译起来太麻烦了，刚好<code>vim-nox</code>支持多种脚本语言，所以就直接用这个好了。</p>
-<h4 id="autojump"><a href="#autojump" class="headerlink" title="autojump"></a>autojump</h4><p><code>autojump</code>插件可以用于直达常用目录。也可以手动设置权重数据库，很方便。</p>
-<h5 id="安装-2"><a href="#安装-2" class="headerlink" title="安装"></a>安装</h5><ol>
-<li><code>git clone git://github.com/joelthelion/autojump.git</code></li>
-<li><code>cd autojump
-./install.py or ./uninstall.py</code><h5 id="使用-1"><a href="#使用-1" class="headerlink" title="使用"></a>使用</h5><code>j dir</code>直达转到对应的目录去<br><code>autojump -a [dir]</code>在数据库中添加一个目录<br><code>autojump -i [value]</code>提升当前目录的权重<br><code>autojump -d [value]</code>降低当前目录的权重<br><code>autojump -s</code>显示数据库中的统计数据<br><code>autojump --purge</code> 清除不再需要的目录</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh_Hans">
     <link itemprop="mainEntityOfPage" href="https://ningoy.github.io/2018/05/05/561-Array-Partition-I/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1363,6 +1268,116 @@
   
   
 
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh_Hans">
+    <link itemprop="mainEntityOfPage" href="https://ningoy.github.io/2017/10/01/《The Django Book》读书笔记二/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/ningoy.github.io/images/avatar.gif">
+      <meta itemprop="name" content="Lenin">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="关爱颈椎成长协会">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/ningoy.github.io/2017/10/01/《The Django Book》读书笔记二/" class="post-title-link" itemprop="url">《The Django Book》读书笔记二</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-10-01 16:32:55" itemprop="dateCreated datePublished" datetime="2017-10-01T16:32:55+08:00">2017-10-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-01-27 18:45:35" itemprop="dateModified" datetime="2020-01-27T18:45:35+08:00">2020-01-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/ningoy.github.io/categories/读书笔记/" itemprop="url" rel="index"><span itemprop="name">读书笔记</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/ningoy.github.io/categories/读书笔记/计算机科学/" itemprop="url" rel="index"><span itemprop="name">计算机科学</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/ningoy.github.io/categories/读书笔记/计算机科学/软件框架/" itemprop="url" rel="index"><span itemprop="name">软件框架</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/ningoy.github.io/categories/读书笔记/计算机科学/软件框架/The-Django-Book/" itemprop="url" rel="index"><span itemprop="name">The Django Book</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="《The-Django-Book》读书笔记二"><a href="#《The-Django-Book》读书笔记二" class="headerlink" title="《The Django Book》读书笔记二"></a>《The Django Book》读书笔记二</h1><h2 id="MTV开发模式"><a href="#MTV开发模式" class="headerlink" title="MTV开发模式"></a>MTV开发模式</h2><p>把数据存取逻辑、业务逻辑和表现逻辑组合在一起的概念有时被称为软件架构的<em>Model-View-Controller</em>(MVC)模式。在这个模式中，Model代表数据存取层，View代表的是系统中选择显示什么和怎么显示的部分，Controller指的是系统中根据用户输入并视需要访问模型，以决定使用哪个视图的那部分。</p>
+<p>Django紧紧地遵循这种MVC模式，可以称得上是一种MVC框架。以下是Django中M、V和C各自的含义：</p>
+<ul>
+<li>M， 数据存取部分，由Django数据库层处理。</li>
+<li>V， 选择显示哪些数据要显示以及怎样显示的部分，由视图和模板处理。</li>
+<li>C， 根据用户输入委派视图的部分，由Django框架根据URLconf设置，对给定URL调用适当的Python函数。</li>
+</ul>
+<p>由于C由框架自行处理，而Django里更关注的是模型（Model）、模板（Template）和视图（Views），Django也被成为MTV框架。在MTV开发模式中：</p>
+<ul>
+<li>M代表模型（Model），即数据存取层。该层处理与数据相关的所有事务：如何存取、如何验证有效性、包含哪些行为以及数据之间的关系等，</li>
+<li>T代表模板（Template），即表现层。该层处理和表现相关的决定：如何在页面或其他类型文档中进行显示。</li>
+<li>V代表视图（View），即业务逻辑层。该层包含存取模型及调取恰当模板的相关逻辑，你可以把它看作模型与模板之间的桥梁。</li>
+</ul>
+<h2 id="数据库配置"><a href="#数据库配置" class="headerlink" title="数据库配置"></a>数据库配置</h2><p>首先，完成数据库服务器的安装和激活，并在其中建立数据库。然后，在Django的配置文件里，缺省是<code>settings.py</code>，打开这个文件并查找数据库配置：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">DATABASES = &#123;</span><br><span class="line">    <span class="string">'default'</span>: &#123;</span><br><span class="line">        <span class="string">'ENGINE'</span>: <span class="string">'django.db.backends.mysql'</span>,</span><br><span class="line">        <span class="string">'NAME'</span>: <span class="string">'mydb'</span>,</span><br><span class="line">        <span class="string">'USER'</span>: <span class="string">'root'</span>,</span><br><span class="line">        <span class="string">'PASSWORD'</span>: <span class="string">'password'</span>,</span><br><span class="line">        <span class="string">'HOST'</span>: <span class="string">'127.0.0.1'</span>,</span><br><span class="line">        <span class="string">'PORT'</span>: <span class="string">'3306'</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>之后，如有必要的话，可以在<code>__init__.py</code>文件中加上这两行：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pymysql</span><br><span class="line">pymysql.install_as_MySQLdb()</span><br></pre></td></tr></table></figure>
+<h2 id="第一个应用程序"><a href="#第一个应用程序" class="headerlink" title="第一个应用程序"></a>第一个应用程序</h2><p>接下来创建一个Django APP，一个包含模型，视图和Django代码，并且形式为独立Python包的完整Django应用。</p>
+<h3 id="关于project和app的区别"><a href="#关于project和app的区别" class="headerlink" title="关于project和app的区别"></a>关于project和app的区别</h3><ul>
+<li>一个project包含很多个Django app以及对它们的配置。</li>
+<li>技术上,project的作用是提供配置文件，比方说哪里定义数据库连接信息，安装的app列表，<code>TEMPLATE_DIRS</code>， 等等。</li>
+<li>一个app是一套Django功能的集合，通常包括模型和视图，按Python包结构的方式存在。</li>
+<li>例如，Django本身内建有一些app，例如注释系统和自动管理界面。app的一个关键点是它们是很容易移植到其他project和被多个project复用。</li>
+</ul>
+<p>对于如何架构Django代码并没有快速成套的规则。如果你只是建造一个简单的Web站点，那么可能你只需要一个app就可以了；但如果是一个包含许多不相关模块的复杂的网站，例如电子商务和社区之类的站点，那么你可能需要把这些模块划分成不同的app，以便日后复用。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
   </div>
 
   
@@ -1433,7 +1448,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/ningoy.github.io/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1444,7 +1459,7 @@
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/ningoy.github.io/tags/">
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
