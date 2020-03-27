@@ -377,94 +377,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh_Hans">
-    <link itemprop="mainEntityOfPage" href="https://ningoy.github.io/2018/03/17/1076-Wifi密码（15）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/ningoy.github.io/images/avatar.gif">
-      <meta itemprop="name" content="Lenin">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="关爱颈椎成长协会">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/ningoy.github.io/2018/03/17/1076-Wifi密码（15）/" class="post-title-link" itemprop="url">1076. Wifi密码（15）</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2018-03-17 20:06:59" itemprop="dateCreated datePublished" datetime="2018-03-17T20:06:59+08:00">2018-03-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-01-27 18:45:35" itemprop="dateModified" datetime="2020-01-27T18:45:35+08:00">2020-01-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/ningoy.github.io/categories/刷题/" itemprop="url" rel="index"><span itemprop="name">刷题</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/ningoy.github.io/categories/刷题/PAT（Basic-Level）Practice/" itemprop="url" rel="index"><span itemprop="name">PAT（Basic Level）Practice</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>下面是微博上流传的一张照片：“各位亲爱的同学们，鉴于大家有时需要使用wifi，又怕耽误亲们的学习，现将wifi密码设置为下列数学题答案：A-1；B-2；C-3；D-4；请同学们自己作答，每两日一换。谢谢合作！！~”—— 老师们为了促进学生学习也是拼了…… 本题就要求你写程序把一系列题目的答案按照卷子上给出的对应关系翻译成wifi的密码。这里简单假设每道选择题都有4个选项，有且只有1个正确答案。</p>
-<p><img src="http://nos.patest.cn/pp_ozun9idw8pr.jpg" alt="微博上流传的一张图片"></p>
-<p><strong>输入格式：</strong></p>
-<p>输入第一行给出一个正整数N（&lt;= 100），随后N行，每行按照“编号-答案”的格式给出一道题的4个选项，“T”表示正确选项，“F”表示错误选项。选项间用空格分隔。</p>
-<p><strong>输出格式：</strong></p>
-<p>在一行中输出wifi密码。</p>
-<p>输入样例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">8</span><br><span class="line">A-T B-F C-F D-F</span><br><span class="line">C-T B-F A-F D-F</span><br><span class="line">A-F D-F C-F B-T</span><br><span class="line">B-T A-F C-F D-F</span><br><span class="line">B-F D-T A-F C-F</span><br><span class="line">A-T C-F B-F D-F</span><br><span class="line">D-T B-F C-F A-F</span><br><span class="line">C-T A-F B-F D-F</span><br></pre></td></tr></table></figure>
-<p>输出样例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">13224143</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">import</span> java.util.regex.Matcher;</span><br><span class="line"><span class="keyword">import</span> java.util.regex.Pattern;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> Pattern pattern = Pattern.compile(<span class="string">"\\w-T"</span>);</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">    <span class="keyword">int</span> n = scanner.nextInt();</span><br><span class="line">    scanner.nextLine(); <span class="comment">// 读掉数字后面的一个回车符</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">      Matcher matcher = pattern.matcher(scanner.nextLine());</span><br><span class="line">      <span class="keyword">while</span> (matcher.find()) &#123;</span><br><span class="line">        System.out.print(matcher.group().charAt(<span class="number">0</span>) - <span class="string">'A'</span> + <span class="number">1</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    scanner.close();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh_Hans">
     <link itemprop="mainEntityOfPage" href="https://ningoy.github.io/2017/11/29/导入CSV文件到MySQL/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -571,94 +483,6 @@
 <p>代码如下：</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">LOAD</span> <span class="keyword">DATA</span> <span class="keyword">LOCAL</span> <span class="keyword">INFILE</span> <span class="string">'FileName'</span> <span class="keyword">REPLACE</span> </span><br><span class="line"><span class="keyword">INTO</span> <span class="keyword">TABLE</span> TableName</span><br><span class="line"><span class="keyword">FIELDS</span> </span><br><span class="line"><span class="keyword">TERMINATED</span> <span class="keyword">BY</span> <span class="string">','</span> </span><br><span class="line"><span class="keyword">OPTIONALLY</span> <span class="keyword">ENCLOSED</span> <span class="keyword">BY</span> <span class="string">''</span></span><br><span class="line"><span class="keyword">LINES</span> <span class="keyword">TERMINATED</span> <span class="keyword">BY</span> <span class="string">'\n'</span></span><br><span class="line"><span class="keyword">IGNORE</span> <span class="number">1</span> <span class="keyword">lines</span>;</span><br></pre></td></tr></table></figure>
 <font color="red">64.813s</font>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh_Hans">
-    <link itemprop="mainEntityOfPage" href="https://ningoy.github.io/2017/11/18/求N以内素数的Python实现/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/ningoy.github.io/images/avatar.gif">
-      <meta itemprop="name" content="Lenin">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="关爱颈椎成长协会">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/ningoy.github.io/2017/11/18/求N以内素数的Python实现/" class="post-title-link" itemprop="url">求N以内质数的Python实现</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2017-11-18 17:09:24" itemprop="dateCreated datePublished" datetime="2017-11-18T17:09:24+08:00">2017-11-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-01-27 18:45:35" itemprop="dateModified" datetime="2020-01-27T18:45:35+08:00">2020-01-27</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/ningoy.github.io/categories/数据结构与算法/" itemprop="url" rel="index"><span itemprop="name">数据结构与算法</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="质数的定义"><a href="#质数的定义" class="headerlink" title="质数的定义"></a>质数的定义</h2><p>质数（prime number）又称素数，有无限个。除了1和它本身以外不再有其他的除数整除。</p>
-<h3 id="Normal"><a href="#Normal" class="headerlink" title="Normal"></a>Normal</h3><p>首先来看一个最<code>normal</code>的实现方式</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">prime_1</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> n &lt;= <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>, n):</span><br><span class="line">        <span class="comment"># 要判断n是不是一个质数 就要看能不能在2到n之间找到一个可以被n整除的除数</span></span><br><span class="line">        <span class="keyword">if</span> n % i == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">primes_3</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>, n+<span class="number">1</span>):</span><br><span class="line">        <span class="keyword">if</span> prime(i):</span><br><span class="line">            <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
-<p><img src="http://op7aviu2v.bkt.clouddn.com/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/image/png/Normal.png" alt="Normal"></p>
-<p>这是求N以内的质数最简单的一种方式，所消耗的时间也很多。那么有没有更快的方法呢？</p>
-<h3 id="埃氏筛"><a href="#埃氏筛" class="headerlink" title="埃氏筛"></a>埃氏筛</h3><p><a href="https://baike.baidu.com/item/%E5%9F%83%E6%8B%89%E6%89%98%E6%96%AF%E7%89%B9%E5%B0%BC" target="_blank" rel="noopener">埃拉托斯特尼</a>筛法，简称埃氏筛或爱氏筛，是一种由希腊数学家埃拉托斯特尼所提出的一种简单检定质数的算法。</p>
-<p>给出要筛数值的范围n，找出以内的质数。先用2去筛，即把2留下，把2的倍数剔除掉；再用下一个质数，也就是3筛，把3留下，把3的倍数剔除掉；接下去用下一个质数5筛，把5留下，把5的倍数剔除掉；不断重复下去……</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">primes_1</span><span class="params">(n)</span>:</span></span><br><span class="line">    p = []</span><br><span class="line">    f = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n + <span class="number">1</span>):</span><br><span class="line">        <span class="keyword">if</span> i &gt; <span class="number">2</span> <span class="keyword">and</span> i % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">            f.append(<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            f.append(<span class="number">0</span>)</span><br><span class="line">    <span class="comment"># 筛去所有大于2的偶数</span></span><br><span class="line">    i = <span class="number">3</span></span><br><span class="line">    <span class="keyword">while</span> i * i &lt;= n:</span><br><span class="line">        <span class="comment"># 在3到根号n之间寻找能整除3到n之间的奇数的除数</span></span><br><span class="line">        <span class="comment"># 用这些除数筛掉奇数中的合数 得到的就是质数</span></span><br><span class="line">        <span class="keyword">if</span> f[i] == <span class="number">0</span>:</span><br><span class="line">            j = i * i</span><br><span class="line">            <span class="keyword">while</span> j &lt;= n:</span><br><span class="line">                f[j] = <span class="number">1</span></span><br><span class="line">                j += <span class="number">2</span> * i</span><br><span class="line">                <span class="comment"># 在筛去一轮偶数之后剩下的都是奇数 如果这个奇数是合数</span></span><br><span class="line">                <span class="comment"># 则该奇数的两个除数也应该都是奇数</span></span><br><span class="line">                <span class="comment"># i是奇数 i*i也是奇数 同样的j = i*i + 偶数 * i也应该是奇数</span></span><br><span class="line">        i += <span class="number">2</span></span><br><span class="line"></span><br><span class="line">    p.append(<span class="number">2</span>)</span><br><span class="line">    <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">3</span>, n + <span class="number">1</span>, <span class="number">2</span>):</span><br><span class="line">        <span class="keyword">if</span> f[x] == <span class="number">0</span>:</span><br><span class="line">            p.append(x)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> p</span><br></pre></td></tr></table></figure>
-<p><img src="http://op7aviu2v.bkt.clouddn.com/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/image/png/Normal_%E5%9F%83%E6%B0%8F%E7%AD%9B.png" alt="Normal_埃氏筛"></p>
-<p>那么还有没有更快的方法呢？</p>
-<h3 id="开根号法"><a href="#开根号法" class="headerlink" title="开根号法"></a>开根号法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">prime_2</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> n &lt;= <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>, int(math.sqrt(n)+<span class="number">1</span>)):</span><br><span class="line">        <span class="comment"># 要判断n是不是一个质数 就要看能不能在2到n之间找到一个可以被n整除的除数</span></span><br><span class="line">        <span class="comment"># 假设存在这样一个除数a 使得a * b = n 那么a b之中必有一个数大于根号n</span></span><br><span class="line">        <span class="comment"># 因此 只要小于或等于根号n的数（1除外）不能整除n 则n一定是质数</span></span><br><span class="line">        <span class="keyword">if</span> n % i == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">primes_4</span><span class="params">(n)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>, n+<span class="number">1</span>):</span><br><span class="line">        <span class="keyword">if</span> prime_2(i):</span><br><span class="line">            <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
-<p><img src="http://op7aviu2v.bkt.clouddn.com/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/image/png/Normal_%E5%9F%83%E6%B0%8F%E7%AD%9B_%E5%BC%80%E6%A0%B9%E5%8F%B7%E6%B3%95.png" alt="Normal_埃氏筛_开根号法"></p>
-<p>那么如果埃氏筛也使用了开根号法，会不会更快呢？</p>
-<h3 id="埃氏筛加开根号法"><a href="#埃氏筛加开根号法" class="headerlink" title="埃氏筛加开根号法"></a>埃氏筛加开根号法</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">primes_1</span><span class="params">(n)</span>:</span></span><br><span class="line">    p = []</span><br><span class="line">    f = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n + <span class="number">1</span>):</span><br><span class="line">        <span class="keyword">if</span> i &gt; <span class="number">2</span> <span class="keyword">and</span> i % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">            f.append(<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            f.append(<span class="number">0</span>)</span><br><span class="line">    <span class="comment"># 筛去所有大于2的偶数</span></span><br><span class="line">    i = <span class="number">3</span></span><br><span class="line">    <span class="keyword">while</span> i * i &lt;= n:</span><br><span class="line">        <span class="comment"># 在3到根号n之间寻找能整除3到n之间的奇数的除数</span></span><br><span class="line">        <span class="comment"># 用这些除数筛掉奇数中的合数 得到的就是质数</span></span><br><span class="line">        <span class="keyword">if</span> f[i] == <span class="number">0</span>:</span><br><span class="line">            j = i * i</span><br><span class="line">            <span class="keyword">while</span> j &lt;= n:</span><br><span class="line">                f[j] = <span class="number">1</span></span><br><span class="line">                j += <span class="number">2</span> * i</span><br><span class="line">                <span class="comment"># 在筛去一轮偶数之后剩下的都是奇数 如果这个奇数是合数</span></span><br><span class="line">                <span class="comment"># 则该奇数的两个除数也应该都是奇数</span></span><br><span class="line">                <span class="comment"># i是奇数 i*i也是奇数 同样的j = i*i + 偶数 * i也应该是奇数</span></span><br><span class="line">        i += <span class="number">2</span></span><br><span class="line"></span><br><span class="line">    p.append(<span class="number">2</span>)</span><br><span class="line">    <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">3</span>, n + <span class="number">1</span>, <span class="number">2</span>):</span><br><span class="line">        <span class="keyword">if</span> f[x] == <span class="number">0</span>:</span><br><span class="line">            p.append(x)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> p</span><br></pre></td></tr></table></figure>
-<p><img src="http://op7aviu2v.bkt.clouddn.com/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/image/png/Normal_%E5%9F%83%E6%B0%8F%E7%AD%9B_%E5%BC%80%E6%A0%B9%E5%8F%B7%E6%B3%95_%E5%9F%83%E6%B0%8F%E7%AD%9B%E5%8A%A0%E5%BC%80%E6%A0%B9%E5%8F%B7%E6%B3%95.png" alt="Normal_埃氏筛_开根号法_埃氏筛加开根号法"></p>
-
       
     </div>
 
@@ -1378,12 +1202,107 @@
   
   
 
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh_Hans">
+    <link itemprop="mainEntityOfPage" href="https://ningoy.github.io/2017/10/01/《The Django Book》读书笔记一/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/ningoy.github.io/images/avatar.gif">
+      <meta itemprop="name" content="Lenin">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="关爱颈椎成长协会">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/ningoy.github.io/2017/10/01/《The Django Book》读书笔记一/" class="post-title-link" itemprop="url">《The Django Book》读书笔记一</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-10-01 15:25:01" itemprop="dateCreated datePublished" datetime="2017-10-01T15:25:01+08:00">2017-10-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-01-27 18:45:35" itemprop="dateModified" datetime="2020-01-27T18:45:35+08:00">2020-01-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/ningoy.github.io/categories/读书笔记/" itemprop="url" rel="index"><span itemprop="name">读书笔记</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/ningoy.github.io/categories/读书笔记/计算机科学/" itemprop="url" rel="index"><span itemprop="name">计算机科学</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/ningoy.github.io/categories/读书笔记/计算机科学/软件框架/" itemprop="url" rel="index"><span itemprop="name">软件框架</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/ningoy.github.io/categories/读书笔记/计算机科学/软件框架/The-Django-Book/" itemprop="url" rel="index"><span itemprop="name">The Django Book</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="《The-Django-Book》读书笔记一"><a href="#《The-Django-Book》读书笔记一" class="headerlink" title="《The Django Book》读书笔记一"></a>《The Django Book》读书笔记一</h1><h2 id="开始一个项目"><a href="#开始一个项目" class="headerlink" title="开始一个项目"></a>开始一个项目</h2><p>项目是Django实例的一系列设置的集合，它包括数据库配置、Django特定选项以及应用程序的特定设置。<br>转到你创建的目录，运行命令<code>django-admin.py startproject mysite</code>这样会在你的当前目录下创建一个目录<code>mysite</code>。<br><code>startproject</code>命令创建一个目录， 包含4个文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">mysite/</span><br><span class="line">	mysite/</span><br><span class="line">		__init__.py</span><br><span class="line">		settings.py</span><br><span class="line">		urls.py</span><br><span class="line">		wsgi.py</span><br><span class="line">	manage.py</span><br></pre></td></tr></table></figure></p>
+<p>文件如下：</p>
+<ul>
+<li><strong>init</strong>.py : 让Python把该目录当成一个开发包（即一组模块）所需的文件。这是一个空文件，一般你不需要修改它。</li>
+<li>manage.py ：一种命令行工具，允许你以多种方式与该Django项目进行交互。</li>
+<li>settings.py ： 该Django项目的设置或配置。</li>
+<li>urls.py ： Django项目你的URL设置。可视其为你的Django网站的目录。</li>
+</ul>
+<h2 id="运行开发服务器"><a href="#运行开发服务器" class="headerlink" title="运行开发服务器"></a>运行开发服务器</h2><p>Django开发服务是可用在开发期间的，一个内建的，轻量的web服务。<br>启动服务，运行下面的命令：<br><code>Python manage.py runserver</code></p>
+<p>报错：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">You have 13 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions.</span><br><span class="line">Run &apos;python manage.py migrate&apos; to apply them.</span><br></pre></td></tr></table></figure>
+<p>依照指示运行<code>python manage.py migrate</code> 即可</p>
+<p>默认情况下，<code>runserver</code>命令在8000端口启动开发服务器，且仅监听本地连接。要想要更改服务器端口的话，可将端口作为命令行参数传入：<br><code>Python manage.py runserver 8080</code><br>通过指定一个IP地址，可以告诉服务器允许非本地连接访问。如果和其他开发人员共享同一开发站点的话，该功能特别有用：<br><code>python manage.py runserver 0.0.0.0:8000</code><br>完成这些设置后，你本地网络中的其他计算机就可以在浏览器中访问你的IP地址了。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
   </div>
 
   
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/ningoy.github.io/page/2/">2</a><a class="extend next" rel="next" href="/ningoy.github.io/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
-  </nav>
 
 
 
@@ -1448,18 +1367,18 @@
       <div class="site-state-item site-state-posts">
           <a href="/ningoy.github.io/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/ningoy.github.io/categories/">
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/ningoy.github.io/tags/">
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
